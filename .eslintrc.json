@@ -22,14 +22,15 @@
     ],
     "rules": {
         "camelcase": "off",
-        "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-props-no-spreading": "off",
         "no-unused-expressions": "off",
         "react/prop-types": "off",
         "prettier/prettier": "error",
+        "react/jsx-indent-props": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "import/prefer-default-export": "off",
+        "react/jsx-filename-extension": "off"
     }
 }
