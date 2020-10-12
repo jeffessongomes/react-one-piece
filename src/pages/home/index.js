@@ -5,24 +5,30 @@ import Card from '../../components/CardContainer';
 import { api } from '../../services/api';
 
 const Home = () => {
-  const [Chapters, setChapters] = useState([]);
+  const [chapters, setChapters] = useState([]);
+
+  const getChapters = useCallback(async () => {
+    try {
+      const { data } = await api.get('');
+      const retrievedChapters = Object.values(data);
+      setChapters(...chapters, ...retrievedChapters);
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   useEffect(() => {
     getChapters();
-  }, []);
-
-  const getChapters = useCallback(async () => {
-    const data = await api.get('');
-
-    console.log(data);
-  }, []);
+  }, [getChapters]);
 
   return (
     <Container>
       <ul>
-        <li>
-          <Card />
-        </li>
+        {chapters.map((chapter) => (
+          <li>
+            <Card />
+          </li>
+        ))}
       </ul>
     </Container>
   );

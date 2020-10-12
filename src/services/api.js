@@ -1,5 +1,6 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://onepiececover.com/api/chapters/900',
+  baseURL:
+    'https://cors-anywhere.herokuapp.com/https://onepiececover.com/api/chapters/',
 });
