@@ -2,16 +2,13 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const CardContainer = () => {
+const CardContainer = (props) => {
   return (
     <Container>
-      <img
-        src="https://res.cloudinary.com/daluwid/image/upload/v1540988490/one-piece-cover-920.png"
-        alt="One Piece Chapter 920"
-      />
+      <img src={props.cover} alt={props.title} />
       <div>
-        <h2>920</h2>
-        <p>I love Oden</p>
+        <h2>{props.numberCap}</h2>
+        <p>{props.title}</p>
       </div>
     </Container>
   );

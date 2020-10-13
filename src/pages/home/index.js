@@ -17,9 +17,15 @@ const Home = () => {
     <Container>
       <ul>
         {chapters.map((chapter) => {
+          const [cover_image] = chapter.cover_images.split('|');
+
           return (
             <li key={chapter.id}>
-              <Card />
+              <Card
+                title={chapter.title}
+                numberCap={chapter.id}
+                cover={cover_image}
+              />
             </li>
           );
         })}
