@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { chaptersSlice } from '../ducks/chaptersSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    chapters: chaptersSlice.reducer,
   },
 });
